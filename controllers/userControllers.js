@@ -4,7 +4,8 @@ const bcrypt = require("bcrypt")
 const {validate} = require ("../config/Validator")
 const {generateToken} =require("../utils/generateToken")
 
-//adding a userc
+//adding a user
+
 const addUser = async (req, res) => {
    const {username, email, password} = req.body;
 
@@ -29,10 +30,16 @@ if(User){
       token: generateToken(User._id)
    })
 }
-
-
-
-
+res.status(201).json({
+   success: true,
+   message:"user created",
+   savedUser,
+});
+res.status(201).json({
+   success:true,
+   message: "user  created",
+   savedUser,
+});
    }else{
       res.status(400).json({
          error:true,
