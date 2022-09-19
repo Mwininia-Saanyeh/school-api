@@ -19,10 +19,10 @@ const schoolSchema =mongoose.Schema({
      facilities: {
         type: Array,
         required: true,
-        maxlength:3
+        
      },
      numofStudents: {
-        type: number,
+        type: Number,
         required: true,
      },
      address: {
@@ -39,5 +39,5 @@ const schoolSchema =mongoose.Schema({
     }
     )
 
-    const School = mongoose.model("school", schoolSchema)
+    const School = mongoose.model("schools", schoolSchema)
     module.exports=School
